@@ -3,6 +3,8 @@ import { Container, CssBaseline, Paper } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
 import HomeScreen from './screens/HomeScreen'
+import { BrowserRouter, Route } from 'react-router-dom'
+import ChooseScreen from './screens/ChooseScreen'
 
 const theme = createMuiTheme({
   typography: {
@@ -28,14 +30,17 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth='sm'>
-        <Paper>
-          <HomeScreen></HomeScreen>
-        </Paper>
-      </Container>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container maxWidth='sm'>
+          <Paper>
+            <Route path='/' component={HomeScreen} exact={true}></Route>
+            <Route path='/choose' component={ChooseScreen} exact={true}></Route>
+          </Paper>
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 
