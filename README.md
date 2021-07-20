@@ -21,8 +21,17 @@ Things implemented:
 
 ### Section 7.4 [Create Backend API for Categories](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342582)
 
-1. Create backend API for categories
+1. Create server.js
+
+   - this will use Node Express to act as simple server.
+   - install Express (_$ npm install express_)
+   - create a port to listen to (`process.env.PORT || 5000`)
+   - install nodemon to run server (`npm install nodemon --save-dev`)
+   - add a script in package.json to run both nodemon and node server.js
 
 2. Create data.js with sample data
 
+   - create categories object with array of name & image objects
+
 3. Return categories
+   - create a route in server.js (`app.get('/api/categories', ...`) to return categories
