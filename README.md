@@ -18,3 +18,11 @@ Things implemented:
 
 3. Create Set Order Type Action
 4. Redirect User to Order Screen
+
+### Section 7.4 [Create Backend API for Categories](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342582)
+
+1. Create backend API for categories
+
+2. Create data.js with sample data
+
+3. Return categories
