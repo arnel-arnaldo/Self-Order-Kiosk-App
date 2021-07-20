@@ -26,7 +26,7 @@ Things implemented:
    - this will use Node Express to act as simple server.
    - install Express (_$ npm install express_)
    - create a port to listen to (`process.env.PORT || 5000`)
-   - install nodemon to run server (`npm install nodemon --save-dev`)
+   - install nodemon to run server (_npm install nodemon --save-dev_)
    - add a script in package.json to run both nodemon and node server.js
 
 2. Create data.js with sample data
@@ -35,3 +35,13 @@ Things implemented:
 
 3. Return categories
    - create a route in server.js (`app.get('/api/categories', ...`) to return categories
+
+### Section 7.5 [List Categories in the Sidebar](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342588)
+
+1. Create Order Screen
+
+2. Get categoryList from context
+
+3. List categories in use effect
+
+4. Show categories in left side
