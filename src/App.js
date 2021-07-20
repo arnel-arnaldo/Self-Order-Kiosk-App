@@ -1,4 +1,3 @@
-import './App.css'
 import { Container, CssBaseline, Paper } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
