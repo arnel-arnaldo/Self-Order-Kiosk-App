@@ -4,6 +4,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import HomeScreen from './screens/HomeScreen'
 import { BrowserRouter, Route } from 'react-router-dom'
 import ChooseScreen from './screens/ChooseScreen'
+import OrderScreen from './screens/OrderScreen'
 
 const theme = createMuiTheme({
   typography: {
@@ -36,6 +37,7 @@ function App() {
           <Paper>
             <Route path='/' component={HomeScreen} exact={true}></Route>
             <Route path='/choose' component={ChooseScreen} exact={true}></Route>
+            <Route path='/order' component={OrderScreen} exact={true}></Route>
           </Paper>
         </Container>
       </ThemeProvider>

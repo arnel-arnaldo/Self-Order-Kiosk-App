@@ -40,8 +40,50 @@ Things implemented:
 
 1. Create Order Screen
 
+   - create **OrderScreen.js** in src/screens
+
 2. Get categoryList from context
+
+   - add **listCategories()** function in action.js:
+
+   ```
+   export const listCategories = async (dispatch) => {
+      dispatch({ type: CATEGORY_LIST_REQUEST })
+      try {
+         const { data } = await axios.get('/api/categories')
+         return dispatch({
+            type: CATEGORY_LIST_SUCCESS,
+            payload: data,
+         })
+      } catch (error) {
+         return dispatch({
+            type: CATEGORY_LIST_FAIL,
+            payload: error.message,
+         })
+      }
+   }
+   ```
 
 3. List categories in use effect
 
+   - in OrderScreen.js, add this before return():
+
+   ```
+   useEffect(() => {
+    listCategories(dispatch)
+   }, [dispatch])
+
+   ```
+
 4. Show categories in left side
+
+   - in OrderScreen.js, add this on return():
+
+   ```
+   {categories.map((category) => (
+      <ListItem button key={category.name}>
+         <Avatar alt={category.name} src={category.image} />
+      </ListItem>
+   ))}
+
+   ```
