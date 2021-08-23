@@ -87,3 +87,10 @@ Things implemented:
    ))}
 
    ```
+
+### Section 7.6 [Create Backend API for Products](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342602)
+
+1. Connect to MongoDB and use Mongoose
+2. Create Product Model
+3. Seed Products
+4. Create API for Products
