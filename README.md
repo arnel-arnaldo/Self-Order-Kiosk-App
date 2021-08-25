@@ -91,6 +91,49 @@ Things implemented:
 ### Section 7.6 [Create Backend API for Products](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342602)
 
 1. Connect to MongoDB and use Mongoose
+   - install Mongoose: `$ npm install mongoose`
+   - on **server.js** add the following lines:
+     - `const mongoose = require('mongoose')`
+     - `const dotenv = require('dotenv')` - environment variable for mongoose URL in .env (`MONGODB_URI=mongodb://localhost/selforderkiosk`)
+     - install **dotenv** to access **.env**: `$ npm install dotenv`
+     - **<ins>NOTE:</ins>** the `useCreateIndex: true` on `mongoose.connect()` is causing an error; removing it resolves it
 2. Create Product Model
+   - add this on server.js:
+     ```
+     const Product = mongoose.model(
+     'products',
+     new mongoose.Schema({
+        name: String,
+        description: String,
+        image: String,
+        price: Number,
+        calorie: Number,
+        category: String,
+     })
+     )
+     ```
 3. Seed Products
+   - add this on server.js:
+   ```
+   app.get('/api/products/seed', async (req, res) => {
+      const products = await Product.insertMany(data.products)
+      res.send({ products })
+   })
+   ```
 4. Create API for Products
+   - add this on server.js:
+   ```
+   app.get('/api/products', async (req, res) => {
+      const { category } = req.query
+      const products = await Product.find(category ? { category } : {})
+      res.send(products)
+   })
+   ```
+5. Add the following **middleware** to read the content of `req.body` in the following added API and save it to MongoDB:
+   ```
+   app.post('/api/products', async (req, res) => {
+      const newProduct = new Product(req.body)
+      const savedProduct = await newProduct.save()
+      res.send(savedProduct)
+   })
+   ```
