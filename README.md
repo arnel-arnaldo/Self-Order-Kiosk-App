@@ -141,3 +141,9 @@ Things implemented:
       res.send(savedProduct)
    })
    ```
+
+### Section 7.7 [List Products on Order Screen](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342666)
+
+1. Get productList from context
+2. List products in useEffect
+3. Show products in main section
