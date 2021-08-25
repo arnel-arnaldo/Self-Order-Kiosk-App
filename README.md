@@ -130,7 +130,11 @@ Things implemented:
    })
    ```
 5. Add the following **middleware** to read the content of `req.body` in the following added API and save it to MongoDB:
+
    ```
+   app.use(express.json())
+   app.use(express.urlencoded({ extended: true }))
+
    app.post('/api/products', async (req, res) => {
       const newProduct = new Product(req.body)
       const savedProduct = await newProduct.save()
