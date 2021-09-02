@@ -164,3 +164,12 @@ Things implemented:
      }, [categories, categoryName, dispatch])
      ```
 3. Show products in main section
+
+### Section 7.8 [Add and Remove Food to Order](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342670)
+
+1. Create add to order modal
+2. Create addToOrder action
+3. Create removeFromOrder action
+4. Create my order section
+5. Handle cancel order
+6. Handle finish order
