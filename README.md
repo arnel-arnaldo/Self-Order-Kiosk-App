@@ -168,8 +168,68 @@ Things implemented:
 ### Section 7.8 [Add and Remove Food to Order](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342670)
 
 1. Create add to order modal
+   - start with adding a `<Dialog>...</Dialog>` modal component in OrderScreen.js
 2. Create addToOrder action
+   - these codes handle it:
+   ```
+   <Button
+      onClick={addToOrderHandler}
+      variant='contained'
+      color='primary'
+      size='large'
+      className={styles.largeButton}
+      >
+      ADD To Order
+   </Button>
+   ```
 3. Create removeFromOrder action
+   - these codes handle it:
+   ```
+   <Button
+      onClick={cancelOrRemoveFromOrder}
+      variant='contained'
+      color='secondary'
+      size='large'
+      className={styles.largeButton}
+      >
+      {orderItems.find((x) => x.name === product.name)
+         ? 'Remove From Order'
+         : 'Cancel'}
+   </Button>
+   ```
 4. Create my order section
+   - these codes handle it:
+   ```
+   <Box className={[styles.bordered, styles.space]}>
+      My Order - {orderType} | Tax: ${taxPrice} | Total: ${totalPrice} |
+      Items: {itemsCount}
+   </Box>
+   ```
 5. Handle cancel order
+   - these codes handle it:
+   ```
+   <Button
+      onClick={() => {
+         clearOrder(dispatch)
+         props.history.push(`/`)
+      }}
+      variant='contained'
+      color='secondary'
+      className={styles.largeButton}
+   >
+      Cancel Order
+   </Button>
+   ```
 6. Handle finish order
+   - these codes handle it:
+   ```
+   <Button
+      onClick={previewOrderHandler}
+      variant='contained'
+      color='primary'
+      disabled={orderItems.length === 0}
+      className={styles.largeButton}
+   >
+      Done
+   </Button>
+   ```
