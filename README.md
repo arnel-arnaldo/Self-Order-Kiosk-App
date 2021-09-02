@@ -145,5 +145,22 @@ Things implemented:
 ### Section 7.7 [List Products on Order Screen](https://www.udemy.com/course/react-the-complete-guide/learn/lecture/26342666)
 
 1. Get productList from context
+   - add **onClick()** on Category button, i.e. `onClick={() => categoryClickHandler(category.name)}`
+     ```
+     const categoryClickHandler = (name) => {
+        setCategoryName(name)
+        listProducts(dispatch, categoryName)
+     }
+     ```
 2. List products in useEffect
+   - whenever category changes, it will trigger the useEffect:
+     ```
+     useEffect(() => {
+        if (!categories) {
+           listCategories(dispatch)
+        } else {
+           listProducts(dispatch, categoryName)
+        }
+     }, [categories, categoryName, dispatch])
+     ```
 3. Show products in main section
